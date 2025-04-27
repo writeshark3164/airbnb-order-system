@@ -4,7 +4,7 @@
     
     <div class="add-user">
       <h2>添加用户</h2>
-      <input v-model="newItem.user" placeholder="用户名">
+      <input v-model="newItem.email" placeholder="用户名">
       <input v-model="newItem.password" placeholder="密码">
       <button @click="addItem">添加</button>
     </div>
@@ -13,7 +13,7 @@
       <h2>用户列表</h2>
       <div v-if="loading">加载中...</div>
       <div v-else>
-        <div v-for="item in items" :key="item.id" class="user">
+        <div v-for="item in items" :key="item.id" class="item">
           <h3>{{ item.user }}</h3>
           <p>{{ item.password }}</p>
         </div>
@@ -78,14 +78,14 @@ export default {
   padding: 20px;
 }
 
-.add-item {
+.add-user {
   margin-bottom: 30px;
   padding: 20px;
   background: #f5f5f5;
   border-radius: 5px;
 }
 
-.add-item input {
+.add-user input {
   display: block;
   margin-bottom: 10px;
   padding: 8px;
@@ -106,7 +106,7 @@ button:hover {
   background: #369f6e;
 }
 
-.items-list {
+.user-list {
   margin-top: 20px;
 }
 
