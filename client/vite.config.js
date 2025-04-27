@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://airbnb-clone-backend.onrender.com',
+        target: 'https://airbnb-clone-backend-t8xj.onrender.com',
         changeOrigin: true,
         secure: true
       }
