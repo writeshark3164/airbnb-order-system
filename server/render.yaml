@@ -1,30 +1,30 @@
 databases:
-  - name: airbnb_order_system_postgres
-    databaseName: airbnb_order_system_postgres
-    user: airbnb_order_system_user
+  - name: airbnb_clone_db
+    databaseName: airbnb_clone
+    user: airbnb_clone_user
 
 services:
   - type: web
-    name: airbnb-order-system-backend
+    name: airbnb-clone-backend
     env: node
     buildCommand: npm install
     startCommand: node app.js
     envVars:
       - key: DB_USER
         fromDatabase:
-          name: airbnb_order_system_postgres
+          name: airbnb_clone_db
           property: user
       - key: DB_HOST
         fromDatabase:
-          name: airbnb_order_system_postgres
+          name: airbnb_clone_db
           property: host
       - key: DB_NAME
         fromDatabase:
-          name: airbnb_order_system_postgres
+          name: airbnb_clone_db
           property: database
       - key: DB_PASSWORD
         fromDatabase:
-          name: airbnb_order_system_postgres
+          name: airbnb_clone_db
           property: password
       - key: DB_PORT
         value: 5432
@@ -33,4 +33,4 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CLIENT_URL
-        value: https://airbnb-order-system-frontend.onrender.com
+        value: https://airbnb-clone-frontend.onrender.com
