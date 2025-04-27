@@ -7,6 +7,7 @@ services:
   - type: web
     name: airbnb-clone-backend
     env: node
+    workingDirectory: /opt/render/project/src/server
     buildCommand: npm install
     startCommand: node app.js
     envVars:
