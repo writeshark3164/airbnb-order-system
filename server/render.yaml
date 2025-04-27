@@ -8,8 +8,8 @@ services:
     name: airbnb-clone-backend
     env: node
     workingDirectory: /opt/render/project/src/server
-    buildCommand: npm install
-    startCommand: node app.js
+    buildCommand: cd server && npm install
+    startCommand: cd server && node app.js
     envVars:
       - key: DB_USER
         fromDatabase:
